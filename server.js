@@ -4,9 +4,11 @@ const path = require("path");
 const util = require("util");
 const fs = require("fs");
 
+
 // Set up reading and writing files
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
+
 
 // Set up Express
 const app = express();
@@ -16,6 +18,8 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
+
+
 
 // HTML Routes
 // Home Page Route
