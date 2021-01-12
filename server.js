@@ -32,3 +32,16 @@ app.get("/api/notes", async function (req, res) {
     const noteData = await getNotes();
     return res.status(200).json(noteData);
 });
+
+// API POST Route
+app.post("/api/notes", async function (req, res) {
+    let newNote = req.body;
+    const noteData = await getNotes();
+
+    noteData.push({
+        ...newNote,
+        id: noteData.length + 1
+    });
+    await writeNotes(noteData);
+    return res.sendStatus(201);
+});
