@@ -45,3 +45,12 @@ app.post("/api/notes", async function (req, res) {
     await writeNotes(noteData);
     return res.sendStatus(201);
 });
+
+
+
+
+
+// Initiate Listener to start server
+app.listen(PORT, function () {
+    console.log("App listening on PORT: " + PORT);
+});
